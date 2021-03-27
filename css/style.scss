@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+// MIXINS
+@mixin button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+@mixin pads {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  cursor: pointer;
+  background: #606e7ea4;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
+  transition: all 0.2s ease;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background: #a8c0ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #3f2b96,
+    #a8c0ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #3f2b96,
+    #a8c0ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-family: "Montserrat", sans-serif;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .beat {
+    display: flex;
+    justify-content: space-between;
+    .controls {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      .beat-title {
+        color: #fff;
+        text-transform: capitalize;
+        margin-right: 20px;
+        width: 50px;
+      }
+      select {
+        padding: 10px;
+        color: #fff;
+        background-color: #293a4e;
+        outline: none;
+        font-size: 1.1em;
+        cursor: pointer;
+        border: none;
+        width: 200px;
+        margin-left: 20px;
+      }
+      .mute {
+        @include button();
+        margin-left: auto;
+        padding: 10px 20px;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .pads {
+    display: flex;
+    margin-left: 50px;
+    &.kick-pads {
+      .pad {
+        @include pads();
+        &.active {
+          background: #293a4e;
+        }
+      }
+    }
+    &.hihat-pads {
+      .pad {
+        @include pads();
+        background: #3caea348;
+        &.active {
+          background: #3caea3;
+        }
+      }
+    }
+    &.clap-pads {
+      .pad {
+        @include pads();
+        background: #f6d55c59;
+        &.active {
+          background: #f6d55c;
+        }
+      }
+    }
+  }
+}
+
+.play {
+  @include button();
+  width: 100px;
+  position: relative;
+  align-self: center;
+  top: 100px;
+  padding: 10px 30px;
+}
