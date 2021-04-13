@@ -2,17 +2,19 @@ class Player {
   constructor() {
     this.padsContainer = document.querySelector(".pads").children;
     this.pads = document.querySelectorAll(".pad");
+    this.muteButtons = document.querySelectorAll(".mute");
     this.playBtn = document.querySelector(".play");
     this.hihatAudio = document.querySelector(".hihat-audio");
     this.clapAudio = document.querySelector(".clap-audio");
     this.kickAudio = document.querySelector(".kick-audio");
-    this.index = 1;
+    this.index = 0;
+    this.isPlaying = false;
   }
 
   loop() {
     setInterval(() => {
       let loop = this.index % this.padsContainer.length;
-      if (loop <= this.padsContainer.length) {     
+      if (loop <= this.padsContainer.length) {
         this.pads.forEach((pad) => {
           if (
             pad.classList.contains(`b${loop}`) &&
@@ -37,7 +39,36 @@ class Player {
 
 const musicPlayer = new Player();
 
-// FOR EVERY PAD ON PLAYER ADD/REMOVE CLASS ON CLICK
+musicPlayer.muteButtons.forEach((muteBtn) => {
+  muteBtn.addEventListener("click", () => {
+    if (muteBtn.classList.contains("mute-kick")) {
+      if (muteBtn.classList.contains("muted")) {
+        musicPlayer.kickAudio.muted = false;
+        muteBtn.classList.remove("muted");
+      } else {
+        muteBtn.classList.add("muted");
+        musicPlayer.kickAudio.muted = true;
+      }
+    } else if (muteBtn.classList.contains("mute-clap")) {
+      if (muteBtn.classList.contains("muted")) {
+        musicPlayer.clapAudio.muted = false;
+        muteBtn.classList.remove("muted");
+      } else {
+        muteBtn.classList.add("muted");
+        musicPlayer.clapAudio.muted = true;
+      }
+    } else if (muteBtn.classList.contains("mute-hihat")) {
+      if (muteBtn.classList.contains("muted")) {
+        musicPlayer.hihatAudio.muted = false;
+        muteBtn.classList.remove("muted");
+      } else {
+        muteBtn.classList.add("muted");
+        musicPlayer.hihatAudio.muted = true;
+      }
+    }
+  });
+});
+
 musicPlayer.pads.forEach((pad) => {
   pad.addEventListener("click", function () {
     this.classList.contains("active")
@@ -47,5 +78,8 @@ musicPlayer.pads.forEach((pad) => {
 });
 
 musicPlayer.playBtn.addEventListener("click", () => {
-  musicPlayer.loop();
+  if (!musicPlayer.isPlaying) {
+    musicPlayer.loop();
+    musicPlayer.isPlaying = true;
+  }
 });

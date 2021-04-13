@@ -87,6 +87,10 @@ main .beat .controls .mute {
   font-size: 1.2em;
 }
 
+main .beat .controls .mute.muted {
+  background-color: red;
+}
+
 main .pads {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,8 +107,8 @@ main .pads.kick-pads .pad {
   border-radius: 15px;
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 main .pads.kick-pads .pad.active {
@@ -116,12 +120,13 @@ main .pads.hihat-pads .pad {
   width: 100px;
   margin: 5px;
   cursor: pointer;
-  background: #3caea348;
+  background: #606e7ea4;
   border-radius: 15px;
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: #3caea348;
 }
 
 main .pads.hihat-pads .pad.active {
@@ -133,12 +138,13 @@ main .pads.clap-pads .pad {
   width: 100px;
   margin: 5px;
   cursor: pointer;
-  background: #f6d55c59;
+  background: #606e7ea4;
   border-radius: 15px;
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: #f6d55c59;
 }
 
 main .pads.clap-pads .pad.active {

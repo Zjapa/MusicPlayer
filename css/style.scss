@@ -82,7 +82,11 @@ main {
         margin-left: auto;
         padding: 10px 20px;
         font-size: 1.2em;
+        &.muted {
+          background-color: red;
+        }
       }
+      
     }
   }
 
