@@ -10,11 +10,15 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
     <title>Music App</title>
   </head>
   <body>
-
     <main>
       <div class="beat beat-one">
         <div class="controls">
@@ -24,14 +28,15 @@
             <option value="../allSounds/kick-acoustic01.wav">
               kick-acoustic01
             </option>
-            <option value="../allSounds/kick-classic.wav">Kick-big</option>
+            <option value="../allSounds/kick-classic.wav">Kick-classic</option>
             <option value="../allSounds/kick-808.wav">Kick-808</option>
-            <option value="../allSounds/kick-big.wav">Kick-big</option>
           </select>
-          <button class="mute mute-kick"><i class="fas fa-volume-up"></i></button>
+          <button class="mute mute-kick">
+            <i class="fas fa-volume-up"></i>
+          </button>
         </div>
         <div class="pads kick-pads">
-          <div class="pad b0 "></div>
+          <div class="pad b0"></div>
           <div class="pad b1"></div>
           <div class="pad b2"></div>
           <div class="pad b3"></div>
@@ -48,9 +53,7 @@
           <select name="hihat-beats" id="hihat-beats">
             <option value="../allSounds/hihat-reso.wav">hihat-reso</option>
             <option value="../allSounds/hihat-plain.wav">hihat-plain</option>
-            <option value="../allSounds/hihat-classic.wav">
-              hihat-classic
-            </option>
+            <option value="../allSounds/hihat-dist02.wav">hihat-dist02</option>
             <option value="../allSounds/hihat-electro.wav">
               hihat-electro
             </option>
@@ -58,7 +61,9 @@
               hihat-digital
             </option>
           </select>
-          <button class="mute mute-hihat"><i class="fas fa-volume-up"></i></button>
+          <button class="mute mute-hihat">
+            <i class="fas fa-volume-up"></i>
+          </button>
         </div>
         <div class="pads hihat-pads">
           <div class="pad b0"></div>
@@ -82,7 +87,9 @@
             <option value="../allSounds/clap-analog.wav">clap-analog</option>
             <option value="../allSounds/clap-808.wav">clap-808</option>
           </select>
-          <button class="mute mute-clap"><i class="fas fa-volume-up"></i></button>
+          <button class="mute mute-clap">
+            <i class="fas fa-volume-up"></i>
+          </button>
         </div>
         <div class="pads clap-pads">
           <div class="pad b0"></div>
@@ -95,6 +102,18 @@
           <div class="pad b7"></div>
           <div class="pad b8"></div>
         </div>
+      </div>
+
+      <div class="tempo">
+        <p class="tempo-title">Tempo: <span class="tempo-speed">150</span></p>
+        <input
+          type="range"
+          name="tempo"
+          max="300"
+          min="10"
+          value="150"
+          id="slider"
+        />
       </div>
       <button class="play">Play</button>
     </main>

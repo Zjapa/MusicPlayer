@@ -151,6 +151,28 @@ main .pads.clap-pads .pad.active {
   background: #f6d55c;
 }
 
+.tempo {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.tempo #slider {
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 10px;
+  color: black;
+}
+
+.tempo .tempo-title {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-size: 1.2em;
+}
+
 .play {
   outline: none;
   border: none;
@@ -165,5 +187,27 @@ main .pads.clap-pads .pad.active {
       align-self: center;
   top: 100px;
   padding: 10px 30px;
+}
+
+@-webkit-keyframes padPop {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes padPop {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
 }
 /*# sourceMappingURL=style.css.map */

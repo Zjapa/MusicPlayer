@@ -122,6 +122,26 @@ main {
   }
 }
 
+.tempo{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 40px;
+  #slider{
+    width: 100%;
+    appearance: none;
+    border-radius: 10px;
+    color: black
+   
+  }
+
+  .tempo-title{
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 1.2em
+  }
+}
+
 .play {
   @include button();
   width: 100px;
@@ -129,4 +149,14 @@ main {
   align-self: center;
   top: 100px;
   padding: 10px 30px;
+}
+
+
+@keyframes padPop{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.2);
+  }
 }
